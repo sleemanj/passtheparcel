@@ -1,13 +1,18 @@
 // ==UserScript==
 // @name       Pass The Parcel Address Highlighter
 // @namespace  http://github.com/sleemanj/passtheparcel
+// @updateURL  https://github.com/sleemanj/passtheparcel/raw/master/passtheparcel.user.js
+// @downloadURL  https://github.com/sleemanj/passtheparcel/raw/master/passtheparcel.user.js
 // @version    0.1
-// @description Highlights possible incorrect address when sending Trademe Parcel with Pass THe Parcel
+// @description Some enhancements for the passtheparcel Trademe integration; highlights possibly mis-detected address, uses scrollable map, can default to Drop Off.
 // @match      https://secure.passtheparcel.co.nz/TradeMe/Send/*
 // @copyright  2014+, James Sleeman
 // ==/UserScript==
 
 (function(){
+    
+  var AlwaysDropOffByDefault = true; // Change to false if you like courier to pickup by default.
+    
   if($('.hide-amend .instructions').length && $('.hide-amend .instructions')[0].innerText.match(/^We recognise this address as being in /))
   {
     var found = $('.hide-amend .instructions')[0].innerText.replace(/^We recognise this address as being in /,'').replace(/, /, ',').split(',');
@@ -60,11 +65,14 @@
     
   // Default to drop-off
   //---------------------------------------------------------
-  $('.pickup-address-link').trigger('click');    
-    window.setTimeout(function(){  
-        document.getElementById("pDropOff").checked  = true;   		
-        pickupDropOff(document.getElementById("pDropOff")); 
-    }, 500);
+  if(AlwaysDropOffByDefault)
+  {
+      $('.pickup-address-link').trigger('click');    
+        window.setTimeout(function(){  
+            document.getElementById("pDropOff").checked  = true;   		
+            pickupDropOff(document.getElementById("pDropOff")); 
+        }, 500);
+  }
   //---------------------------------------------------------
     
 })();
