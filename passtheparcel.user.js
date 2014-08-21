@@ -11,7 +11,12 @@
 
 (function(){
     
+  // ========= CONFIGURATION ===================================================================
+    
   var AlwaysDropOffByDefault = true; // Change to false if you like courier to pickup by default.
+  
+  // ========= END CONFIGURATION ===============================================================
+    
     
   if($('.hide-amend .instructions').length && $('.hide-amend .instructions')[0].innerText.match(/^We recognise this address as being in /))
   {
