@@ -13,7 +13,7 @@
     
   // ========= CONFIGURATION ===================================================================
     
-  var AlwaysDropOffByDefault = true; // Change to false if you like courier to pickup by default.
+  var AlwaysDropOffByDefault = false; // Change to false if you like courier to pickup by default.
   
   // ========= END CONFIGURATION ===============================================================
     
