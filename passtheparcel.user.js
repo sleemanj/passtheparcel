@@ -18,11 +18,11 @@
   // ========= END CONFIGURATION ===============================================================
     
     
-  if($('.hide-amend .instructions').length && $('.hide-amend .instructions')[0].innerText.match(/^We recognise this address as being in /))
+  if($('.hide-amend .instructions').length && $('.hide-amend .instructions')[0].textContent.match(/^\s*We recognise this address as being in /))
   {
-    var found = $('.hide-amend .instructions')[0].innerText.replace(/^We recognise this address as being in /,'').replace(/, /, ',').split(',');
+    var found = $('.hide-amend .instructions')[0].textContent.replace(/^\s*We recognise this address as being in /,'').replace(/, /, ',').replace(/\s*$/,'').split(',');
     var dm    = $('.trademe-delivery-map div')[0];
-    var dmt   = dm.innerText.toLowerCase();
+    var dmt   = dm.textContent.toLowerCase();
     var dme   = document.createElement('div');
     var matched = 0;
     for(var i = 0; i < found.length; i++)
@@ -33,7 +33,7 @@
         d.style.color = 'red';
         d.style.fontWeight = 'bold';
         d.style.marginBottom = '0px';
-        d.innerText = found[i] + ' (?)';
+        d.textContent = found[i] + ' (?)';
         dme.appendChild(d);          
       }
       else
