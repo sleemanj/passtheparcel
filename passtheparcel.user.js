@@ -3,9 +3,9 @@
 // @namespace  http://github.com/sleemanj/passtheparcel
 // @updateURL  https://github.com/sleemanj/passtheparcel/raw/master/passtheparcel.user.js
 // @downloadURL  https://github.com/sleemanj/passtheparcel/raw/master/passtheparcel.user.js
-// @version    0.1
+// @version    0.2
 // @description Some enhancements for the passtheparcel Trademe integration; highlights possibly mis-detected address, uses scrollable map, can default to Drop Off.
-// @match      https://secure.passtheparcel.co.nz/TradeMe/Send/*
+// @match      https://*.passtheparcel.co.nz/TradeMe/Send/*
 // @copyright  2014+, James Sleeman
 // ==/UserScript==
 
